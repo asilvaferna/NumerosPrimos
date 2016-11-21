@@ -26,16 +26,7 @@ public class NumerosPrimos {
         }
 //Sacar trozos del for para otros metodos
         for (int i = 1; i <= 99999; i++) {
-            int divisionEntera = i;
-
-            int contador = 0;
-//suprimir el while por un metodo
-            while (divisionEntera != 0) {
-                divisionEntera = divisionEntera / 10;
-                contador++;
-            }
-            nDigitos = contador;
-
+            nDigitos = calculaDigitos(i);
             if (nDigitos == numDigitos) {
                 if (i < 4) {
                     isPrimo = true;
@@ -78,5 +69,14 @@ public class NumerosPrimos {
         }
         return numero;
 
+    }
+    public static int calculaDigitos(int i){
+        int divisionEntera = i;
+        int contador = 0;
+            while (divisionEntera != 0) {
+                divisionEntera = divisionEntera / 10;
+                contador++;
+            }
+            return contador;
     }
 }
