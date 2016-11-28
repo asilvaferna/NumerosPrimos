@@ -28,7 +28,7 @@ public class NumerosPrimos {
             nDigitos = calculaDigitos(i);
             if (nDigitos == numDigitos) {
                 evaluaPrimos(i);
-                if (isPrimo == true) {
+                if (evaluaPrimos(i) == true) {
                     System.out.println(i);
                 }
             }
@@ -53,7 +53,6 @@ public class NumerosPrimos {
         }
         return contador;
     }
-
     public static boolean evaluaPrimos(int i) {
         if (i < 4) {
             isPrimo = true;
@@ -67,7 +66,6 @@ public class NumerosPrimos {
             if (limite % 2 == 0) {
                 limite--;
             }
-//suprimir el while por un metodo
             while (i1 <= limite) {
                 if (i % i1 == 0) {
                     contador1++;
