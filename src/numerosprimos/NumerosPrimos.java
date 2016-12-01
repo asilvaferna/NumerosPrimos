@@ -57,30 +57,29 @@ public class NumerosPrimos {
         } else if (i % 2 == 0) {
             isPrimo = false;
         } else {
-            int contador1 = 0;
-            int i1 = 1;
-            int limite = (i - 1) / 2;
-            if (limite % 2 == 0) {
-                limite--;
-            }
-            isPrimo = evaluaDivisible(i, limite, i1, contador1);
-            if (contador1 == 1) {
-                isPrimo = true;
-            }
+            calculaPrimo(i);
         }
         return isPrimo;
     }
-    public static boolean evaluaDivisible(int i, int limite, int i1, int contador1){
-        while (i1 <= limite) {
-                if (i % i1 == 0) {
-                    contador1++;
-                }
-                i1 += 2;
-                if (contador1 == 2) {
-                    i1 = limite + 1;
-                }
-                return false;
+
+    private static void calculaPrimo(int i) {
+        int contador1 = 0;
+        int i1 = 1;
+        int limite = (i - 1) / 2;
+        if (limite % 2 == 0) {
+            limite--;
         }
-        return true; 
+        while (i1 <= limite) {
+            if (i % i1 == 0) {
+                contador1++;
+            }
+            i1 += 2;
+            if (contador1 == 2) {
+                i1 = limite + 1;
+            }
+        }
+        if (contador1 == 1) {
+            isPrimo = true;
+        }
     }
 }
