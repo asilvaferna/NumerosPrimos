@@ -63,7 +63,15 @@ public class NumerosPrimos {
             if (limite % 2 == 0) {
                 limite--;
             }
-            while (i1 <= limite) {
+            isPrimo = evaluaDivisible(i, limite, i1, contador1);
+            if (contador1 == 1) {
+                isPrimo = true;
+            }
+        }
+        return isPrimo;
+    }
+    public static boolean evaluaDivisible(int i, int limite, int i1, int contador1){
+        while (i1 <= limite) {
                 if (i % i1 == 0) {
                     contador1++;
                 }
@@ -71,13 +79,8 @@ public class NumerosPrimos {
                 if (contador1 == 2) {
                     i1 = limite + 1;
                 }
-            }
-
-            if (contador1 == 1) {
-                isPrimo = true;
-            }
+                return false;
         }
-        return isPrimo;
+        return true; 
     }
-    
 }
