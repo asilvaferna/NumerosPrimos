@@ -21,9 +21,6 @@ public class NumerosPrimos {
         int numDigitos = 0;
         int nDigitos = 0;
         numDigitos = pedirDigitos();
-        if (numDigitos <= 0) {
-            System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
-        }
         for (int i = 1; i <= 99999; i++) {
             nDigitos = calculaDigitos(i);
             if (nDigitos == numDigitos) {
